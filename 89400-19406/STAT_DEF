@@ -1,0 +1,181 @@
+1     !# $Header: dd_setup,v 1.5 95/06/01 07:48:38 Exp $
+2     !#---------------------------------------------------------
+3     !# Constellation State and Sync Word Softkey Definition File
+4     !# for Digital Demodulation (Option AYA) and
+5     !# Video Demodulation (Option AYH).     
+6     !#                                      
+7     !# This file is used to define :        
+8     !# -----------------------------        
+9     !#   1. Constellation state to symbol bit mapping for
+10    !#      various modulation formats      
+11    !#   2. Custom sync word softkeys       
+12    !#                                      
+13    !# File Format :                        
+14    !# -------------                        
+15    !#   1. The file can optionally have line numbers at the
+16    !#      beginning of each line.  NOTE : Line numbers will
+17    !#      enable on-line editing within the IBASIC editor.
+18    !#   2. Each line to be parsed must have a '!' character
+19    !#      before the information fields.  
+20    !#   3. All information fields are enclosed by double quotes
+21    !#      '"' and separated by commas.    
+22    !#   4. Any line with a comment character '#' before any
+23    !#      information fields will be ignored.
+24    !#   5. The file can be either LIF ASCII or DOS formats.
+25    !#                                      
+26    !# Usage :                              
+27    !# -------                              
+28    !#   1. Save desired definitions in ASCII file using editor
+29    !#      (IBASIC, DOS, HP-UX...).        
+30    !#   2. Recall file using [Save/Recall], [recall more],
+31    !#      [recall sync/state defs].       
+32    !#                                      
+33    !#   NOTE: For additional details, see online help for the
+34    !#         [recall sync/state defs] softkey.
+35    !#                                      
+36    !#                                      
+37    !# SEE BELOW FOR RECORD FORMATS AND EXAMPLES.
+38    !#                                      
+39    !# State Definition Record Format :     
+40    !# --------------------------------     
+41    !# These records define the constellation state to symbol
+42    !# bit mapping for the different modulation formats.  To
+43    !# view the current mappings, press [Instrument Mode],
+44    !# [demodulation setup], [demod format], [display state definitions].
+45    !#                                      
+46    !# These records use a direct 2 dimensional (X-Y) mapping
+47    !# to define the states. Viewing the ideal constellation,
+48    !# the states are defined starting from top (line #1) to
+49    !# bottom, left to right.               
+50    !#                                      
+51    !# "S_mod_n","state","state",...        
+52    !#                                      
+53    !#    "S_mod_n" - Modulation format (mod) and line (n) of
+54    !#                constellation         
+55    !#    "state"   - Bit definitions for states on this line
+56    !#                of constellation      
+57    !#                                      
+58    !# Sync Word Record Format :            
+59    !# -------------------------            
+60    !# These records will define the F3 through F8 softkeys
+61    !# under the [Time] [sync setup] submenu.  These keys
+62    !# provide a customizable set of pre-defined bit patterns
+63    !# that allow users to quickly change sync alignment.
+64    !#                                      
+65    !# "Fn","label","pattern"               
+66    !#                                      
+67    !#    "Fn"      - Softkey to define     
+68    !#    "label"   - User defined label    
+69    !#    "pattern" - Binary sync word pattern
+70    !#                                      
+71    !#---------------------------------------------------------
+72    !#                                      
+73    !# EXAMPLES FOR BOTH RECORD TYPES FOLLOW BELOW
+74    !#                                      
+75    !# NOTE: State definitions for 64 and 256 QAM must be in hexadecimal.
+76    !#       All other format definitions are in binary.
+77    !#---------------------------------------------------------
+78    !#                                      
+79    !#                                      
+80    !# State definitions for 64 QAM (option AYH)
+81    !#                                      
+82    ! "S_64QAM_1","6","7","5","4","3","0","1","2"
+83    ! "S_64QAM_2","F","E","D","C","B","A","9","8"
+84    ! "S_64QAM_3","17","16","15","14","13","12","11","10"
+85    ! "S_64QAM_4","1F","1E","1D","1C","1B","1A","19","18"
+86    ! "S_64QAM_5","27","26","25","24","23","22","21","20"
+87    ! "S_64QAM_6","2F","2E","2D","2C","2B","2A","29","28"
+88    ! "S_64QAM_7","37","36","35","34","33","32","31","30"
+89    ! "S_64QAM_8","3F","3E","3D","3C","3B","3A","39","38"
+90    !#                                      
+91    !#                                      
+92    !#                                      
+93    !# State definitions for 256 QAM (option AYH)
+94    !#                                      
+95    ! "S_256QAM_1","F","E","D","C","B","A","9","8","7","6","5","4","3","2","1","0"
+96    ! "S_256QAM_2","1F","1E","1D","1C","1B","1A","19","18","17","16","15","14","13","12","11","10"
+97    ! "S_256QAM_3","2F","2E","2D","2C","2B","2A","29","28","27","26","25","24","23","22","21","20"
+98    ! "S_256QAM_4","3F","3E","3D","3C","3B","3A","39","38","37","36","35","34","33","32","31","30"
+99    ! "S_256QAM_5","4F","4E","4D","4C","4B","4A","49","48","47","46","45","44","43","42","41","40"
+100   ! "S_256QAM_6","5F","5E","5D","5C","5B","5A","59","58","57","56","55","54","53","52","51","50"
+101   ! "S_256QAM_7","6F","6E","6D","6C","6B","6A","69","68","67","66","65","64","63","62","61","60"
+102   ! "S_256QAM_8","7F","7E","7D","7C","7B","7A","79","78","77","76","75","74","73","72","71","70"
+103   ! "S_256QAM_9","8F","8E","8D","8C","8B","8A","89","88","87","86","85","84","83","82","81","80"
+104   ! "S_256QAM_10","9F","9E","9D","9C","9B","9A","99","98","97","96","95","94","93","92","91","90"
+105   ! "S_256QAM_11","AF","AE","AD","AC","AB","AA","A9","A8","A7","A6","A5","A4","A3","A2","A1","A0"
+106   ! "S_256QAM_12","BF","BE","BD","BC","BB","BA","B9","B8","B7","B6","B5","B4","B3","B2","B1","B0"
+107   ! "S_256QAM_13","CF","CE","CD","CC","CB","CA","C9","C8","C7","C6","C5","C4","C3","C2","C1","C0"
+108   ! "S_256QAM_14","DF","DE","DD","DC","DB","DA","D9","D8","D7","D6","D5","D4","D3","D2","D1","D0"
+109   ! "S_256QAM_15","EF","EE","ED","EC","EB","EA","E9","E8","E7","E6","E5","E4","E3","E2","E1","E0"
+110   ! "S_256QAM_16","FF","FE","FD","FC","FB","FA","F9","F8","F7","F6","F5","F4","F3","F2","F1","F0"
+111   !#                                      
+112   !# State definitions for 32 QAM (options AYA and AYH)
+113   !#                                      
+114   ! "S_32QAM_1",        "00011","00010","00001","00000"
+115   ! "S_32QAM_2","01001","01000","00111","00110","00101","00100"
+116   ! "S_32QAM_3","01111","01110","01101","01100","01011","01010"
+117   ! "S_32QAM_4","10101","10100","10011","10010","10001","10000"
+118   ! "S_32QAM_5","11011","11010","11001","11000","10111","10110"
+119   ! "S_32QAM_6",        "11111","11110","11101","11100"
+120   !#                                      
+121   !# State definitions for 16 QAM (options AYA and AYH)
+122   !#                                      
+123   ! "S_16QAM_1","0011","0010","0001","0000"
+124   ! "S_16QAM_2","0111","0110","0101","0100"
+125   ! "S_16QAM_3","1011","1010","1001","1000"
+126   ! "S_16QAM_4","1111","1110","1101","1100"
+127   !#                                      
+128   !# State definitions for QPSK (option AYA)
+129   !#                                      
+130   ! "S_QPSK_1","01","00"                  
+131   ! "S_QPSK_2","11","10"                  
+132   !#                                      
+133   !# State definitions for Offset QPSK (option AYA)
+134   !#                                      
+135   ! "S_OQPSK_1","01","00"                 
+136   ! "S_OQPSK_2","11","10"                 
+137   !#                                      
+138   !# State definitions for DQPSK define the bit
+139   !# pattern for a phase transition.  The following
+140   !# table shows the transition in degrees
+141   !# for the corresponding position in the state
+142   !# definition table.                    
+143   !# For example, 0 deg corresponds to a 00 state,
+144   !# and 90 deg corresponds to a 01 state.
+145   !#                                      
+146   !#     90 deg    0 deg                  
+147   !#    180 deg  -90 deg                  
+148   !#                                      
+149   !# State definitions for DQPSK (option AYA)
+150   !#                                      
+151   ! "S_DQPSK_1","01","11"                 
+152   ! "S_DQPSK_2","00","10"                 
+153   !#                                      
+154   !# State definitions for BPSK (option AYA)
+155   !#                                      
+156   ! "S_BPSK_1","1","0"                    
+157   !#                                      
+158   !# State definitions for 8-PSK (option AYA)
+159   !#                                      
+160   ! "S_8PSK_1",     "010","001"           
+161   ! "S_8PSK_2","011",          "000"      
+162   ! "S_8PSK_3","100",          "111"      
+163   ! "S_8PSK_4",     "101","110"           
+164   !#                                      
+165   !# State definitions for 4-FSK (option AYA)
+166   !#                                      
+167   ! "S_4FSK_1","00"                       
+168   ! "S_4FSK_2","01"                       
+169   ! "S_4FSK_3","11"                       
+170   ! "S_4FSK_4","10"                       
+171   !#                                      
+172   !# Example Sync Word Softkeys (options AYA and AYH)
+173   !#                                      
+174   ! "F3","Sync 1","1000111101111011001100000000"
+175   ! "F4","Sync 2","0100010111110011111010000000"
+176   ! "F5","Sync 3","1100111010011011010101100000"
+177   ! "F6","Sync 4","1100001101010010110110111000"
+178   ! "F7","Sync 5","0010001001010011111010010110"
+179   ! "F8","Sync 6","1111110100001011100011010011"
+180   !#                                      
+181   END                                     
