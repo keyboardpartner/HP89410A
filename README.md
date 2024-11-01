@@ -1,9 +1,9 @@
 # HP89410A
-Data for Agilent/HP 89410A Spectrum Analyzer
+
+Data for [Agilent/HP 89410A Spectrum Analyzer Hack](https://www.eevblog.com/forum/testgear/enable-all-options-on-hp-89441a-and-89410a/)
 
 Since the 89400 Vector Spectrum Analyzer series (89410A, 89441A) is out of support, you're not able to obtain software
-options from HP/Agilent/Keysight anymore. Here's a hack to enable software
-options using the HP 89400 Service Utility disk (enclosed, just unzip and copy to DOS-formatted floppy):
+options from HP/Agilent/Keysight anymore. Here's a hack to enable software options using the HP 89400 Service Utility disk (enclosed, just unzip and copy to DOS-formatted floppy):
 
    1. Create a service disk as described in README of service disk (ommitting instructions 1 to 3,
         as it is already unzipped) and save your current 89400 device
