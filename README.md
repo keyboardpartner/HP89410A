@@ -67,3 +67,6 @@ All data from end of factory calibration data $0343 to $03FF is garbage. Disrega
 
 RCL_CFG and SAVE_CFG seem to be scrambled/zipped/encoded BASIC files which run
 even on a machine with BASIC disabled. No investigations done so far.
+
+Carsten Meyer (bovist)
+
